@@ -9,17 +9,18 @@ Tf = 950;                 % temp. finale [Gradi Celsius]
 Tamb = 20;                % temp. ambiente [Gradi Celsius]
 vk = 77;                  % tensione applicata[V]
 mu = 1.256637e-6;         % perm. magnetica nel vuoto[H/m]
+sig = 1.8233e+04;         % Conducibilità termica
 stb = 5.670374e-8;        % cost.di Stefan-Boltzmann [W*m^-2*K^-4]
 
 % Sigma: conducibilita' elettrica
-a = 4.6659e-5;     
-b = 8.4121e-9;
-c = -3.7246e-13;
-d = 6.1960e-16;
-        % a = 4.9659e-7;
-        % b = 8.412e-10;
-        % c = -3.7246e-13;
-        % d = 6.1960e-17;
+%a = 4.6659e-5;     
+%b = 8.4121e-9;
+%c = -3.7246e-13;
+%d = 6.1960e-16;
+        a = 4.9659e-7;
+        b = 8.412e-10;
+        c = -3.7246e-13;
+        d = 6.1960e-17;
 sigma = 1/(a+b*Tf+c*Tf^2+d*Tf^3);
 
 % Distanze tra l'origine e il..
@@ -27,7 +28,7 @@ Rc1 = 25e-3;            % ..raggio interno del coil
 Rc2 = 30e-3;            % ..raggio esterno del coil
 
 %% Funzione vettore potenziale
-[phi,hs,B] = vett_pot(sigma, w, vk, mu, Rc1, Rc2);
+[phi,hs,B] = vett_pot(sig, w, vk, mu, Rc1, Rc2);
 
 % Valori dei campi H e B all'interno del coil
 campoH = max(abs(B)/mu)
