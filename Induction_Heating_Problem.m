@@ -12,14 +12,11 @@ mu = 1.256637e-6;         % perm. magnetica nel vuoto[H/m]
 stb = 5.670374e-8;        % cost.di Stefan-Boltzmann [W*m^-2*K^-4]
 
 % Sigma: conducibilita' elettrica
-a = 4.6659e-5;     
-b = 8.4121e-9;
+a = 4.9659e-7;     
+b = 8.4121e-10;
 c = -3.7246e-13;
-d = 6.1960e-16;
-        % a = 4.9659e-7;
-        % b = 8.412e-10;
-        % c = -3.7246e-13;
-        % d = 6.1960e-17;
+d = 6.1960e-14;
+
 sigma = 1/(a+b*Tf+c*Tf^2+d*Tf^3);
 
 % Distanze tra l'origine e il..
@@ -54,23 +51,3 @@ title('MODULO DEL CAMPO MAGNETICO')
 ylabel('MOMDULO DI H')
 xlabel('RAGGIO r')
 legend('H')
-
-%% CALCOLI ANALITICI
-
-% raggio della sezione della spira (diametro=5mm)
-        r_spi = 2.5e-3;
-% numero di spire/metro
-        n_spi = 200;
-% spessore pelle 
-        delta = sqrt(2/(sigma*w*mu));
-% lunghezza di filo/metro
-        L = 2*pi*(Rc1+r_spi)*n_spi;
-% Resistenza del filo/metro
-        Res = L/(sigma*pi*(r_spi^2));
-% corrente che scorre nelle spire
-        Analit_corrente = (vk)/Res; 
-% campo induzione magnetica B
-        Analit_campoB = mu*n_spi*Analit_corrente
-        Analit_campoH = Analit_campoB/mu
-% potenziale vettore con r=Rc1
-        Analit_Rc1_vettA = 0.5*Analit_campoB*Rc1;
