@@ -10,15 +10,12 @@ Tamb = 20;                % temp. ambiente [Gradi Celsius]
 vk = 77;                  % tensione applicata[V]
 mu = 1.256637e-6;         % perm. magnetica nel vuoto[H/m]
 stb = 5.670374e-8;        % cost.di Stefan-Boltzmann [W*m^-2*K^-4]
-
 % Sigma: conducibilita' elettrica
 a = 4.9659e-7;     
 b = 8.4121e-10;
 c = -3.7246e-13;
 d = 6.1960e-14;
-
-sigma = 1/(a+b*Tf+c*Tf^2+d*Tf^3);
-
+sigma = 1/(a+b*Tf+c*Tf^2+d*Tf^3);  % conducibilità elettrica [S/m]
 % Distanze tra l'origine e il..
 Rc1 = 25e-3;            % ..raggio interno del coil
 Rc2 = 30e-3;            % ..raggio esterno del coil
