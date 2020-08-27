@@ -9,7 +9,6 @@ Tf = 950;                 % temp. finale [Gradi Celsius]
 Tamb = 20;                % temp. ambiente [Gradi Celsius]
 vk = 77;                  % tensione applicata[V]
 mu = 1.256637e-6;         % perm. magnetica nel vuoto[H/m]
-sig = 1.8233e+04;         % Conducibilità termica
 stb = 5.670374e-8;        % cost.di Stefan-Boltzmann [W*m^-2*K^-4]
 
 % Sigma: conducibilita' elettrica
